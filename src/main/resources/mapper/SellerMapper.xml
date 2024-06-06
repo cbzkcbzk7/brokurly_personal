@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.seller.SellerDao">
+    <select id="selectSellerByLogin" resultType="Seller">
+        SELECT id, pwd, name
+        FROM seller_account
+        WHERE id = #{id}
+        AND   pwd = #{pwd}
+    </select>
+
+    <select id="selectBsnsNoById" resultType="Seller">
+        SELECT bsns_no, name
+        FROM seller_account
+        WHERE id = #{id}
+    </select>
+
+</mapper>

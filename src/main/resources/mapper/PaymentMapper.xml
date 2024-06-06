@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.order.PaymentDao">
+    <!-- CREATE -->
+    <insert id="insert">
+        INSERT INTO payment
+        (pay_no, pay_mthd, pay_req_dt, pay_conf_dt, order_amt, item_amt,
+         ship_fee, cpn_dc_amt, card_dc_amt, point_dc_amt, pay_amt, order_id, item_name)
+        VALUES (#{payNo}, #{payMthd}, #{payReqDt}, #{payConfDt}, #{paymentAmount.orderAmt}, #{paymentAmount.itemAmt},
+                #{paymentAmount.shipFee}, #{paymentAmount.cpnDcAmt}, #{paymentAmount.cardDcAmt},
+                #{paymentAmount.pointDcAmt}, #{paymentAmount.payAmt}, #{orderId}, #{itemName})
+    </insert>
+
+    <!-- READ -->
+    <sql id="select">
+        SELECT *
+        FROM payment
+    </sql>
+
+    <select id="selectAll" resultType="PaymentDetails">
+        <include refid="select"/>
+    </select>
+
+    <select id="selectByOrderId" resultMap="paymentDetailsResultMap">
+        SELECT *
+        FROM payment
+        WHERE order_id = #{orderId}
+    </select>
+
+    <resultMap id="paymentDetailsResultMap" type="com.brokurly.entity.payment.PaymentDetails">
+        <!-- PaymentDetails Basic Fields -->
+        <result property="payNo" column="pay_no"/>
+        <result property="payMthd" column="pay_mthd"/>
+        <result property="payStat" column="pay_stat"/>
+        <result property="payReqDt" column="pay_req_dt"/>
+        <result property="payConfDt" column="pay_conf_dt"/>
+        <result property="orderId" column="order_id"/>
+        <result property="itemName" column="item_name"/>
+
+        <!-- PaymentAmount Fields -->
+        <association property="paymentAmount" javaType="com.brokurly.entity.payment.PaymentAmount">
+            <result property="orderAmt" column="order_amt"/>
+            <result property="itemAmt" column="item_amt"/>
+            <result property="itemDcAmt" column="item_dc_amt"/>
+            <result property="shipFee" column="ship_fee"/>
+            <result property="cpnDcAmt" column="cpn_dc_amt"/>
+            <result property="cardDcAmt" column="card_dc_amt"/>
+            <result property="pointDcAmt" column="point_dc_amt"/>
+            <result property="payAmt" column="pay_amt"/>
+        </association>
+    </resultMap>
+
+    <!-- UPDATE -->
+    <update id="updatePayStat">
+        UPDATE payment
+        SET pay_stat = #{payStat}
+        WHERE pay_no = #{payNo}
+    </update>
+
+    <!-- DELETE -->
+
+</mapper>

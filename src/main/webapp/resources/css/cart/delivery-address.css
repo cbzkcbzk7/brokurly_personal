@@ -1,0 +1,203 @@
+button {
+    overflow: visible;
+    background-color: transparent;
+    border: none;
+}
+.checkbox {
+    width: 1.8em;
+    height: 1.8em;
+    appearance: none;
+    border-radius: 50%;
+    border: 1px solid rgb(221, 221, 221);
+    background: url(/resources/image/img-check-gray.png) no-repeat center;
+}
+
+.checkbox:hover {
+    cursor: pointer;
+}
+
+.checkbox-checked {
+    width: 1.8em;
+    height: 1.8em;
+    appearance: none;
+    border-radius: 50%;
+    background: #11967f url(/resources/image/img-check.png) no-repeat center center;
+    border: 0;
+}
+
+.css-1c9gcj2 {
+    padding: 135px 30px 60px;
+    letter-spacing: -0.5px;
+}
+.css-3tv9jr {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 321;
+    padding: 30px 30px 0;
+    box-sizing: border-box;
+    background: #fff;
+}
+.css-3ljxig {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+}
+.css-1nvqzrc {
+    display: inline-block;
+    padding-left: 12px;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #999;
+}
+.css-r1km81 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    margin-top: 18px;
+    padding: 15px 0 13px;
+    border-top: 2px solid #333;
+    border-bottom: 1px solid #333;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+.css-r1km81 >span {
+    width: 64px;
+}
+.css-r1km81 >span:nth-of-type(2) {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+}
+.css-c08slb {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    padding: 24px 0px 18px;
+}
+.css-1g6fovq {
+    width: 64px;
+    text-align: center;
+}
+.css-1g6fovq > label {
+    padding: 0px;
+}
+.css-agvwxo {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0px, 0px, 0px, 0px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+}
+.css-79hxr7 {
+    margin-right: 12px;
+}
+.css-82a6rk {
+    flex: 1 1 0%;
+}
+.css-1pfhx0h {
+    display: inline-block;
+    height: 22px;
+    padding: 0px 8px;
+    margin-bottom: 11px;
+    border-radius: 11px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 22px;
+    color: rgb(102, 102, 102);
+    background-color: rgb(247, 247, 247);
+    vertical-align: top;
+}
+.css-12stxlh {
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(51, 51, 51);
+    word-break: break-all;
+}
+.css-185jqch {
+    padding-top: 7px;
+    color: rgb(102, 102, 102);
+}
+.css-52eudx {
+    display: inline-block;
+    width: 1px;
+    height: 12px;
+    margin: 0px 8px;
+    background-color: rgb(221, 221, 221);
+}
+.css-1gcxwpt {
+    padding-top: 7px;
+    font-weight: 400;
+}
+.css-1gcxwpt > span {
+    font-size: 14px;
+}
+.css-1g6fovq {
+    width: 64px;
+    text-align: center;
+}
+.css-ik44wu {
+    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    border: 0px;
+    background: url(https://res.kurly.com/kurly/ico/2021/edit_24_24_ccc.svg) 0px 0px no-repeat;
+}
+.css-m0h4tf {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+.css-m0h4tf button {
+    border: 0;
+    border-radius: 0;
+    border-top: 1px solid #f4f4f4;
+}
+.css-1bqw8am {
+    display: block;
+    padding: 0 10px;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    height: 60px;
+    border-radius: 3px;
+    color: #333;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.css-m0h4tf button >span {
+    font-weight: 500;
+    line-height: 24px;
+}
+.css-nytqmg {
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 500;
+}
+.css-m0h4tf button >span img {
+    width: 16px;
+    height: 16px;
+    margin-top: 5px;
+    vertical-align: top;
+}
+.css-1m3kac1 {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+
+
+
+

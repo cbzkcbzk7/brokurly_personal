@@ -1,0 +1,746 @@
+html, button, input, select, textarea {
+    font-family: "Noto Sans", "malgun gothic", AppleGothic, dotum, sans-serif;
+}
+
+/* 전체 */
+.css-luwwab {
+    display: flex;
+    width: 1050px;
+    padding: 50px 0px 80px;
+    margin: 0px auto;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+/* 왼쪽 탭 div */
+.css-833hqy {
+    width: 200px;
+}
+
+/* 왼쪽 탭 고객센터 */
+.css-1v4whg {
+    height: 75px;
+    padding: 5px 0px 35px 1px;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 35px;
+    color: rgb(51, 51, 51);
+    letter-spacing: -1px;
+}
+/* 왼쪽 탭 테이블 */
+.css-1x9bshx {
+    border: 1px solid rgb(242, 242, 242);
+}
+
+/* 왼쪽 탭 각 항목 */
+.css-g4g0eu {
+    cursor: pointer;
+    border-bottom: 1px solid rgb(242, 242, 242);
+    padding: 15px 13px 15px 20px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    font-size: 14px;
+    color: rgb(102, 102, 102);
+}
+
+.css-g4g0eu.active, .css-g4g0eu:hover {
+    background-color: rgb(250, 250, 250);
+    color: rgb(17,150,127);
+    font-weight: 500;
+}
+
+/* 왼쪽 탭 도움이 필요하신가요 */
+.css-196gwz9 {
+    width: 100%;
+    height: 60px;
+    padding: 0px 14px 0px 20px;
+    margin-top: 36px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(250, 250, 250);
+    line-height: 20px;
+}
+
+.css-rmee6s {
+    display: flex;
+    flex-direction: column;
+    color: rgb(51, 51, 51);
+}
+
+.css-1sdidca {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.css-rnnx2x {
+    font-size: 12px;
+}
+
+
+/* 오른쪽 게시판 공간 */
+.css-171zbec {
+    width: 820px;
+}
+
+/* 게시판 제목 */
+.css-j0lifa {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-bottom: 27px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+/* 게시판 제목 */
+.css-fhxb3m {
+    display: flex;
+    flex-direction: row;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+/* 게시글 영역 */
+.css-185m8ch {
+    width: 820px;
+    padding: 4px 20px;
+    border-top: 2px solid rgb(51, 51, 51);
+}
+
+.css-12l4j2c {
+    width: 640px;
+}
+
+/* 유형 영역 */
+.css-zjik7 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+/* 유형 대분류 */
+.css-1a8mkrv {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.css-1a8mkrv > div:first-of-type {
+    margin-right: 8px;
+}
+
+.css-1a8mkrv > div {
+    width: 316px;
+}
+
+/* 드롭다운 시작 */
+
+/* 전체 role presentation */
+.css-1sucic7 {
+    position: fixed;
+    z-index: 1300;
+    inset: 0px;
+    display: none;
+}
+
+/* hidden */
+.css-esi9ax {
+    position: fixed;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+    inset: 0px;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+    z-index: -1;
+}
+
+/* dropdown 창 */
+.css-1g99zn8 {
+    background-color: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.87);
+    transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    border-radius: 4px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 5px 5px -3px, rgba(0, 0, 0, 0.14) 0px 8px 10px 1px, rgba(0, 0, 0, 0.12) 0px 3px 14px 2px;
+    position: absolute;
+    overflow: hidden auto;
+    min-width: 16px;
+    min-height: 16px;
+    max-width: calc(100% - 32px);
+    max-height: calc(100% - 32px);
+    outline: 0px;
+}
+
+/* ul */
+.css-r8u8y9 {
+    list-style: none;
+    margin: 0px;
+    padding: 8px 0px;
+    position: relative;
+    outline: 0px;
+}
+
+.css-1g99zn8 ul {
+    padding: 0px;
+}
+
+/* li */
+.css-1n71h99 {
+    -webkit-tap-highlight-color: transparent;
+    background-color: transparent;
+    outline: 0px;
+    border: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    user-select: none;
+    vertical-align: middle;
+    appearance: none;
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    display: flex;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    min-height: 48px;
+    box-sizing: border-box;
+    font-size: 14px;
+    padding: 0px;
+    color: rgb(51, 51, 51);
+    white-space: normal;
+    cursor: pointer;
+}
+
+.css-1n71h99:hover {
+    background-color: rgb(250,250,250);
+}
+
+
+@media(min-width: 600px)
+.css-1n71h99 {
+    min-height: auto;
+}
+
+.css-1g99zn8 ul > li {
+    font-family: "Noto Sans";
+}
+
+.css-1n71h99.Mui-selected {
+    background-color: rgba(25, 118, 210, 0.08);
+}
+
+.css-1g99zn8 ul li.Mui-selected:not(.placeholder) {
+    font-weight: 600;
+    background-color: rgb(255, 255, 255);
+    color: rgb(17, 150, 127);
+}
+
+.css-1g99zn8 ul li.MuiMenuItem-root:not(:last-of-type) {
+    border-bottom: none;
+}
+
+/* p */
+.css-u6h51f {
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding: 11.5px 16px;
+}
+
+/* span */
+.css-w0pj6f {
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    z-index: 0;
+    inset: 0px;
+    border-radius: inherit;
+}
+
+.show{
+    display: none;
+}
+
+/* 유형 소분류 */
+.css-tzsjye {
+    display: inline-flex;
+    flex-direction: column;
+    position: relative;
+    min-width: 0px;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    vertical-align: top;
+    width: 100%;
+}
+
+.css-eg1co4 {
+    font-family: Roboto, Helvetica, Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.4375em;
+    letter-spacing: 0.00938em;
+    color: rgba(0, 0, 0, 0.87);
+    box-sizing: border-box;
+    cursor: text;
+    display: inline-flex;
+    -webkit-box-align: center;
+    align-items: center;
+    position: relative;
+    font-size: 14px;
+    height: 44px;
+    border-color: rgb(221, 221, 221);
+    border-radius: 0px;
+}
+
+.css-qiwgdb {
+    appearance: none;
+    user-select: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font: inherit;
+    letter-spacing: inherit;
+    color: currentcolor;
+    border: 0px;
+    box-sizing: content-box;
+    background: none;
+    height: 1.4375em;
+    margin: 0px;
+    -webkit-tap-highlight-color: transparent;
+    display: block;
+    min-width: 0px;
+    width: 100%;
+    animation-name: mui-auto-fill-cancel;
+    animation-duration: 10ms;
+    padding: 16.5px 14px;
+}
+
+.css-qiwgdb.MuiSelect-select {
+    height: auto;
+    min-height: 1.4375em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.css-qiwgdb.css-qiwgdb.css-qiwgdb {
+    padding-right: 32px;
+}
+
+.css-1k3x8v3 {
+    bottom: 0px;
+    left: 0px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.css-1636szt {
+    user-select: none;
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    fill: currentcolor;
+    flex-shrink: 0;
+    transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.5rem;
+    position: absolute;
+    right: 7px;
+    top: calc(50% - 0.5em);
+    pointer-events: none;
+    color: rgba(0, 0, 0, 0.54);
+}
+.css-igs3ac {
+    text-align: left;
+    position: absolute;
+    inset: -5px 0px 0px;
+    margin: 0px;
+    padding: 0px 8px;
+    pointer-events: none;
+    border-radius: inherit;
+    border-style: solid;
+    border-width: 1px;
+    overflow: hidden;
+    min-width: 0%;
+    border-color: rgba(0, 0, 0, 0.23);
+}
+
+.css-nnbavb {
+    float: unset;
+    padding: 0px;
+    line-height: 11px;
+    transition: width 150ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+
+/* 필수 입력 */
+.css-hwfcu5 {
+    color: red;
+}
+
+/*
+
+제목 영역
+
+*/
+
+.css-1waqr6j {
+    padding: 0px;
+}
+
+.css-t7kbxx {
+    position: relative;
+    height: 44px;
+}
+
+.css-1quw3ub {
+    width: 100%;
+    height: 44px;
+    padding: 0px 11px 1px 15px;
+    border-radius: 4px;
+    border: 1px solid rgb(221, 221, 221);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 42px;
+    color: rgb(51, 51, 51);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.css-1waqr6j input {
+    font-size: 14px;
+}
+
+/* 내용 영역 */
+.css-17bp14q {
+    display: flex;
+    padding: 12px 0px;
+    -webkit-box-align: start;
+    align-items: start;
+}
+.css-rm6te4 > div {
+    padding-bottom: 0px;
+}
+
+.css-mm5tap {
+    width: 140px;
+    font-size: 14px;
+    line-height: 44px;
+}
+
+.css-rm6te4 > div > div:first-of-type {
+    padding-top: 5px;
+}
+
+.css-1gua357 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 536px;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 4px;
+}
+
+.css-5etceh {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px 16px;
+    font-size: 16px;
+    line-height: 21px;
+    word-break: break-all;
+    z-index: 1;
+    background: none;
+    border-radius: 4px;
+    color: rgb(51, 51, 51);
+    outline: none;
+    resize: none;
+    border: none;
+}
+
+.css-rm6te4 textarea {
+    font-family: "Noto Sans", sans-serif;
+}
+
+.css-1ofzfyp {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    padding: 15px 15px 32px;
+}
+
+.css-168e7y9 {
+    font-size: 14px;
+    line-height: 20px;
+    color: rgb(153, 153, 153);
+}
+
+.css-c2iqrm {
+    display: block;
+    margin: 0px 0px 4px;
+    font-weight: 500;
+}
+
+.css-nlv18q {
+    color: rgb(240, 63, 64);
+    padding: 4px 0px 0px 15px;
+}
+
+.css-1sz9zst {
+    display: block;
+    margin: 16px 0px 4px;
+    font-weight: 500;
+}
+
+.css-1vtbu89 {
+    padding: 4px 0px 0px 10px;
+}
+
+.css-dbwxb9 {
+    padding: 0px 16px 16px;
+    font-size: 12px;
+    text-align: right;
+}
+
+.css-14kcwq8 {
+    color: rgb(153, 153, 153);
+}
+
+/* 사진 업로드 */
+
+.css-mlazth > div {
+    padding: 3px 0px 0px;
+}
+
+.css-g8ewo8 {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0px;
+}
+
+.css-175wokr {
+    display: flex;
+    flex-flow: wrap;
+    gap: 9px;
+    font-size: 20px !important;
+}
+
+css-175wokr > div {
+    height: 72px;
+    width: 72px;
+}
+
+.css-j9ybaa {
+    width: 100%;
+    height: 100%;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 6px;
+}
+
+.css-175wokr span {
+    font-size: 20px;
+}
+
+.css-113ip0v {
+    display: inline-block;
+    width: 1.875rem;
+    height: 1.875rem;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgICA8ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPgogICAgICAgIDxwYXRoIGQ9Ik0wIDBoMzB2MzBIMHoiLz4KICAgICAgICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0Ljc3OSA2LjExMSkiIHN0cm9rZT0iIzMzMyIgc3Ryb2tlLXdpZHRoPSIxLjMiPgogICAgICAgICAgICA8cGF0aCBkPSJNMTEuNzkyIDBjLjM5OSAwIC43MTcuMDU2Ljk1NS4xNy4xNzkuMDg0LjM0Ni4xOTkuNTAzLjM0NGwuMTUzLjE1NS42MzEuNzAzYy4xMjIuMTMuMjM0LjIzMy4zMzcuMzFhLjk1Ljk1IDAgMCAwIC4zNC4xNmMuMTI1LjAzMS4yOTIuMDQ3LjUwMy4wNDdsMi45MDYtLjAwM2MxLjI4NCAwIDIuMzI0IDEuMDYyIDIuMzI0IDIuMzd2MTEuMTUxYzAgMS4zMS0xLjA0IDIuMzctMi4zMjQgMi4zN0gyLjMyNGMtMS4yODMgMC0yLjMyNC0xLjA2LTIuMzI0LTIuMzdWNC4yNTdjMC0xLjMxIDEuMDQtMi4zNyAyLjMyNC0yLjM3aDIuOTgzYy4yNDUtLjAwOS40MzItLjA0NS41NTktLjEwOC4xMS0uMDU1LjIzLS4xNDUuMzYtLjI3bC4xMzQtLjEzNy42MzEtLjcwM2MuMi0uMjIuNDE4LS4zODcuNjU3LS41LjE5LS4wOS40MzItLjE0NC43MjUtLjE2Mkw4LjYwMyAwaDMuMTg5eiIvPgogICAgICAgICAgICA8Y2lyY2xlIGN4PSIxMC4xNDIiIGN5PSI5LjUyOSIgcj0iMy41NTYiLz4KICAgICAgICA8L2c+CiAgICA8L2c+Cjwvc3ZnPgo=);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.css-eivff4 {
+    display: none;
+}
+
+.css-sqqcql {
+    margin: 11px 0px 7px;
+    line-height: 16px;
+    font-size: 13px;
+    color: rgb(153, 153, 153);
+}
+
+.css-7n55a5 {
+    display: flex;
+    flex-direction: row;
+    margin-top: 7px;
+}
+
+/* 답변 수신 여부 */
+.css-v3zc4x {
+    border-top: 1px solid rgb(221, 221, 221);
+    border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.css-1wnowod {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    justify-content: center;
+}
+
+.css-n7yl5s {
+    width: 160px;
+    margin-top: 5px;
+}
+
+.css-bg7ww1 {
+    padding: 0px;
+}
+
+.css-t7kbxx {
+    position: relative;
+    height: 44px;
+}
+
+.css-bg7ww1 input:disabled {
+    color: rgb(204, 204, 204);
+}
+
+.css-1quw3ub:disabled {
+    opacity: 1;
+    background-color: rgb(250, 250, 250);
+    color: rgb(153, 153, 153);
+}
+
+.css-bg7ww1 input {
+    font-size: 14px;
+    font-family: "Noto Sans", sans-serif;
+}
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+.css-1quw3ub {
+    width: 100%;
+    height: 44px;
+    padding: 0px 11px 1px 15px;
+    border-radius: 4px;
+    border: 1px solid rgb(221, 221, 221);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 42px;
+    color: rgb(51, 51, 51);
+    outline: none;
+    box-sizing: border-box;
+}
+
+.css-1s6b9a2 {
+    flex: 1 1 0%;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    align-items: center;
+    padding: 0px 16px;
+}
+
+.css-1s6b9a2 label {
+    font-size: 14px;
+}
+
+.css-izsmfv {
+    padding: 14px 0px 9px;
+    position: relative;
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    font-size: 16px;
+    vertical-align: top;
+    line-height: normal;
+    color: rgb(51, 51, 51);
+    cursor: pointer;
+}
+
+.css-agvwxo {
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0px, 0px, 0px, 0px);
+    clip-path: inset(50%);
+    width: 1px;
+    height: 1px;
+}
+
+.css-79hxr7 {
+    margin-right: 12px;
+}
+
+.css-79hxr7 svg {
+    vertical-align: middle;
+}
+
+.css-1ybcx6v {
+    display: inline-block;
+    cursor: pointer;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}
+
+.css-3ky9df {
+    font-size: 14px;
+    line-height: 20px;
+    padding: 16px 0px 4px;
+    color: rgb(153, 153, 153);
+}
+
+/*
+
+등록버튼
+
+*/
+
+.css-1spu0j4 {
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    padding-top: 40px;
+}
+
+button[disabled], input[disabled] {
+    cursor: default;
+}
+
+.css-114fr9p {
+    width: 160px;
+    height: 56px;
+    padding: 0px 10px;
+    text-align: center;
+    letter-spacing: 0px;
+    font-size: 16px;
+    line-height: 20px;
+    color: white;
+    cursor: pointer;
+    background-color: rgb(221, 221, 221);
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 500;
+    border-radius: 3px !important;
+}

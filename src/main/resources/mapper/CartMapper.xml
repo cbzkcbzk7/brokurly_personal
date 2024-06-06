@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.cart.CartDao">
+
+    <!-- CREATE -->
+    <insert id="insert">   <!--3. SQL 이름이랑 넣을값 이름 맞춤? -->
+        INSERT INTO cart
+            (item_id, cust_id, item_cnt)
+        VALUES
+            (#{itemId}, #{custId}, #{itemCnt})
+    </insert>
+
+    <!-- READ -->
+    <sql id="select">
+        SELECT * FROM cart
+    </sql>
+
+    <select id="getCart" resultType="Cart">
+        SELECT a.custId, a.itemId, a.itemCnt, b.name, b.price, b.shipType, b.pkgType, b.itemDcAmt
+        FROM cart a left outer join goods b on a.itemId = b.itemId
+        WHERE cust_id = #{custId}
+    </select>
+
+    <select id="selectByCustId" resultType="Cart">
+        <include refid="select"/>
+        WHERE cust_id = #{custId}
+    </select>
+
+    <select id="selectByItemId" resultType="Cart">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update">
+        UPDATE cart
+        SET item_cnt = #{itemCnt}
+        WHERE cust_id = #{custId}
+        AND item_id = #{itemId}
+    </update>
+
+
+    <!-- DELETE -->
+    <!--고객 아이디랑 아이탬아이디 같을때만 삭제되게 -->
+    <delete id="deleteOneItem">
+        DELETE FROM cart
+        WHERE item_id = #{itemId}
+        AND cust_id = #{custId}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM cart
+        WHERE cust_id = #{custId}
+    </delete>
+
+</mapper>

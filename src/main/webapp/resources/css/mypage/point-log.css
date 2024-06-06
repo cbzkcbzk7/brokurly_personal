@@ -1,0 +1,460 @@
+body {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+@media (min-width: 1280px) {
+    body .app {
+        max-width: 375px;
+        max-height: 740px;
+    }
+}
+
+body .app {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+body .app main {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    overflow-y: auto;
+    line-height: 1;
+    font: inherit;
+    font-size: 100%;
+    color: #333;
+}
+
+body .app main header {
+    z-index: 5;
+    top: 0;
+    right: 0;
+    position: sticky;
+    left: 0;
+    justify-content: center;
+    display: flex;
+    background-color: #fff;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body .app main .content {
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body .app main .content .stat {
+    display: flex;
+    padding: 24px 20px 20px 24px;
+    flex-direction: column;
+    margin: 0;
+    border: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body .app main .content .stat .avail {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    min-width: 0;
+    box-sizing: border-box;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+body .app main .content .stat .avail .header {
+    display: flex;
+    flex-direction: column;
+}
+
+body .app main .content .stat .avail .header .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body .app main .content .stat .avail .header div span {
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+}
+
+body .app main .content .stat .avail .header div .icon {
+    margin-left: 4px;
+    line-height: 0;
+    cursor: pointer;
+}
+
+body .app main .content .stat .avail .header .price {
+    margin-top: 6px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+body .app main .content .stat .avail .header .price .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+
+body .app main .content .stat .avail .header .price .wrapper .amount {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 30px;
+    color: #333;
+}
+
+body .app main .content .stat .avail .header .price .wrapper .won {
+    margin-left: 2px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+body .app main .content .stat .avail .header .details {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+body .app main .content .stat .avail .header .details .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+body .app main .content .stat .avail .header .details .row:last-child {
+    margin-top: 6px;
+}
+
+body .app main .content .stat .avail .header .details .row span {
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+
+body .app main .content .stat .avail .header .details .row .amount {
+    font-weight: 600;
+    color: #333;
+}
+
+body .app main .content .blank-line {
+    margin-top: 0;
+    width: 100%;
+    height: 8px;
+    display: block;
+    background-color: #f4f4f4;
+}
+
+body .app main .content img {
+    color: transparent;
+    width: 100%;
+    height: auto;
+}
+
+body .app main .content .bottom {
+    margin-top: 0;
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+}
+
+body .app main .content .bottom .row1 {
+    display: flex;
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    flex-direction: row;
+}
+
+body .app main .content .bottom button:first-child {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 0;
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+    border-radius: 4px;
+    border-color: #5f0080;
+    border-width: 1px;
+    border-style: solid;
+    align-items: center;
+}
+
+body .app main .content .bottom .button-wrapper {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 0;
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+    cursor: pointer;
+    border-radius: 4px;
+    border-color: #ddd;
+    border-width: 1px;
+    border-style: solid;
+    align-items: center;
+}
+
+body .app main .content .bottom .button-wrapper span {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+
+body
+.app
+main
+.content
+.bottom
+.button-wrapper:nth-child(n + 2):nth-child(-n + 4) {
+    margin-left: 6px;
+}
+
+body .app main .content .bottom button span {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    color: #5f0080;
+}
+
+body .app main .content .bottom .row2 {
+    padding-right: 20px;
+    padding-left: 24px;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
+body .app main .content .bottom .row2 span {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+body .app main .content .bottom .row3 {
+    flex-grow: 1;
+    flex-direction: column;
+    display: flex;
+}
+
+body .app main .content .bottom .row3 .wrapper {
+    border-color: #f4f4f4;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+body .app main .content .bottom .row3 .wrapper .date {
+    padding-top: 16px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 8px;
+    flex-direction: row;
+    display: flex;
+    font-weight: 500;
+}
+
+body .app main .content .bottom .row3 .wrapper .details {
+    display: flex;
+    padding-top: 12px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 12px;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .left {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .left .icon {
+    position: relative;
+    flex-shrink: 0;
+}
+
+body
+.app
+main
+.content
+.bottom
+.row3
+.wrapper
+.details
+.left
+.icon
+.background {
+    padding: 18px;
+    display: block;
+    border-radius: 9999px;
+    background-color: #f2f2f2;
+}
+
+body
+.app
+main
+.content
+.bottom
+.row3
+.wrapper
+.details
+.left
+.icon
+.icon-wrapper {
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    position: absolute;
+    padding: 4px;
+    flex-direction: row;
+    display: flex;
+    bottom: 0;
+}
+
+body
+.app
+main
+.content
+.bottom
+.row3
+.wrapper
+.details
+.left
+.icon
+.icon-status {
+    justify-content: center;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+
+body
+.app
+main
+.content
+.bottom
+.row3
+.wrapper
+.details
+.left
+.icon
+.icon-status
+span {
+    text-align: center;
+    font-size: 11px;
+    line-height: 13px;
+    color: #666;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .left .titles {
+    margin-left: 12px;
+    display: flex;
+    flex-direction: column;
+}
+
+body
+.app
+main
+.content
+.bottom
+.row3
+.wrapper
+.details
+.left
+.titles
+.main {
+    font-size: 14px;
+    line-height: 20px;
+    color: #333;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .left .titles .sub {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .right {
+    margin-left: 20px;
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    font-size: 14px;
+    line-height: 20px;
+    color: #666;
+}
+
+body .app main .content .bottom .row3 .wrapper .details .right .exp {
+    margin-top: 4px;
+    font-size: 12px;
+    line-height: 18px;
+    color: #666;
+}
+
+body .app main .content .bottom .row3 .no-log {
+    justify-content: center;
+    flex-grow: 1;
+    align-items: center;
+}
+
+body .app main .content .bottom .row3 .no-log .wrapper {
+    display: flex;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    flex-direction: column;
+}
+
+body .app main .content .bottom .row3 .no-log .wrapper .row {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+body .app main .content .bottom .row3 .no-log .wrapper .row span {
+    font-size: 16px;
+    line-height: 20px;
+    color: #b5b5b5;
+}

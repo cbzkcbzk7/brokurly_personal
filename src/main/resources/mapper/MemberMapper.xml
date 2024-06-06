@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.member.MemberDao">
+    <!-- CREATE -->
+    <!--     useGeneratedKeys="true" keyProperty="bno"-->
+    <sql id="select">
+        SELECT cust_id,
+               pwd,
+               name,
+               email,
+               tel_no,
+               sex,
+               birth_dt,
+               reg_dt,
+               adult_verif_dt,
+               cart_cnt,
+               point,
+               consent,
+               act_stat,
+               grade,
+               sns_id
+        FROM customer
+    </sql>
+    <insert id="insert">
+        INSERT INTO customer
+        (cust_id, pwd, name, email, tel_no, sex,
+         birth_dt, consent,sns_id)
+        VALUES
+            (#{email}, #{pwd}, #{name}, #{email}, #{telNo}, #{sex},
+             #{birthDt}, #{consent} ,'0')
+    </insert>
+
+    <!-- READ -->
+    <select id="selectMemberByOne" resultType="Member">
+        <include refid="select"/>
+        WHERE cust_id = #{custId}
+    </select>
+    <select id="selectMemberByLogin" resultType="Member">
+        SELECT cust_id, pwd, name
+        FROM customer
+        WHERE cust_id = #{custId}
+    </select>
+    <select id="selectMemberBySnsId" resultType="Member">
+        SELECT cust_id,
+               pwd,
+               name,
+               email,
+               tel_no,
+               sex,
+               birth_dt,
+               consent,
+               sns_id
+        FROM customer
+        WHERE sns_id = #{snsId}
+    </select>
+    <!-- KAKAO LOGIN START-->
+    <select id="selectSnsMember" resultType="int">
+        <include refid="count"/>
+        WHERE sns_id = #{snsId}
+    </select>
+    <select id="findBySnsId" resultType="String">
+        SELECT cust_id
+        FROM customer
+        WHERE sns_id = #{snsId}
+    </select>
+    <!--    <select id="findByAuth">-->
+    <!--        SELECT cust_id-->
+    <!--        FROM customer-->
+    <!--        WHERE email = #{snsId}-->
+    <!--    </select>-->
+
+    <insert id="insertSnsMember">
+        INSERT INTO customer
+        (cust_id, pwd, name, email, tel_no, sex,
+         birth_dt, consent,sns_id)
+        VALUES
+            (#{custId}, #{pwd}, #{name}, #{custId}, #{telNo}, #{sex},
+             #{birthDt}, '0' ,#{snsId})
+    </insert>
+    <!-- KAKAO LOGIN END-->
+
+    <!-- COUNT -->
+    <sql id="count">
+        SELECT COUNT(*) FROM customer
+    </sql>
+
+    <select id="countMemberAll" resultType="int">
+        <include refid="count"/>
+    </select>
+
+    <select id="countMemberByLogin" resultType="int">
+        <include refid="count"/>
+        WHERE cust_id = #{custId}
+        AND pwd = #{pwd}
+    </select>
+
+    <select id="countMember" resultType="int">
+        <include refid="count" />
+        WHERE cust_id = #{custId}
+    </select>
+
+    <select id="countEmail" resultType="int">
+        <include refid="count"/>
+        WHERE cust_id = #{email}
+    </select>
+
+    <!--    이메일 인증 : 로그인 시 인증여부를 체크(안했으면 0 반환)-->
+    <select id="emailAuthFail" resultType="int">
+        <include refid="count"/>
+        WHERE cust_id = #{custId} AND mail_auth=1
+    </select>
+
+    <!-- UPDATE -->
+    <update id="updateMailKey">
+        UPDATE customer
+        SET   mail_key = #{mailKey}
+        WHERE email    = #{email}
+          AND   cust_id  = #{custId}
+    </update>
+    <update id="updateMailAuth">
+        UPDATE customer
+        SET     mail_auth = 1
+        WHERE   email     = #{email}
+          AND     mail_key  = #{mailKey}
+    </update>
+    <update id="updateMemberByPwd">
+        UPDATE customer
+        SET pwd = #{pwd}
+        WHERE cust_id = #{custId}
+    </update>
+    <!-- DELETE -->
+    <delete id="deleteMemberAll">
+        DELETE FROM customer
+    </delete>
+
+    <delete id="deleteMember">
+        DELETE FROM customer
+        WHERE cust_id = #{custId}
+    </delete>
+</mapper>

@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.mypage.PointDao">
+    <!-- CREATE -->
+    <insert id="insert" useGeneratedKeys="true" keyProperty="pointNo">
+        INSERT INTO point (point_no, cust_id, point_amt, expir_dt)
+        VALUES (#{pointNo}, #{custId}, #{pointAmt}, #{expirDt})
+    </insert>
+
+    <!-- READ -->
+    <select id="selectByExpirDt" resultType="Point">
+        SELECT point_no, cust_id, point_amt, expir_dt
+        FROM point
+        WHERE cust_id = #{custId}
+        ORDER BY expir_dt
+    </select>
+
+    <select id="selectByCustomer" resultType="Point">
+        SELECT point_no, cust_id, point_amt, expir_dt
+        FROM point
+        WHERE cust_id = #{custId}
+    </select>
+
+    <select id="selectByPointNo" resultType="Point">
+        SELECT point_no, cust_id, point_amt, expir_dt
+        FROM point
+        WHERE point_no = #{pointNo}
+    </select>
+
+    <select id="selectToBeExpired" resultType="Point">
+        SELECT point_no, cust_id, point_amt, expir_dt
+        FROM point
+        WHERE cust_id = #{custId}
+        AND expir_dt BETWEEN now() AND date_add(now(), interval 30 day)
+    </select>
+
+    <select id="selectExpiredByCustomer" resultType="Point">
+        SELECT point_no, cust_id, point_amt, expir_dt
+        FROM point
+        WHERE expir_dt &lt; now()
+        AND cust_id = #{custId}
+    </select>
+
+    <select id="countAll" resultType="int">
+        SELECT count(*)
+        FROM point
+    </select>
+
+    <!-- UPDATE -->
+    <update id="updatePointAmtByPointNo">
+        UPDATE point
+        SET point_amt = point_amt + #{amt}
+        WHERE point_no = #{pointNo}
+        ORDER BY expir_dt
+        LIMIT 1
+    </update>
+
+    <!-- DELETE -->
+    <delete id="deleteAll">
+        DELETE
+        FROM point
+    </delete>
+
+    <delete id="deleteByPointNo">
+        DELETE
+        FROM point
+        WHERE point_no = #{pointNo}
+    </delete>
+
+<!--    <select id="countUsageByCustomerAndPeriod" resultType="int">
+        SELECT count(*)
+        FROM point_log
+        WHERE cust_id = #{custId}
+          AND point_stat = '사용'
+          AND proc_dt BETWEEN date_sub(now(), interval #{period} month) AND now()
+    </select>
+
+    <select id="selectExpByCustomerAndPeriod" resultType="PointLogExpDto">
+        SELECT point_amt, proc_dt, point_spec, point_stat
+        FROM point_log
+        WHERE cust_id = #{custId}
+          AND point_stat = '소멸'
+          AND proc_dt BETWEEN date_sub(now(), interval #{period} month) AND now()
+    </select>
+
+    <select id="countExpByCustomerAndPeriod" resultType="int">
+        SELECT count(*)
+        FROM point_log
+        WHERE cust_id = #{custId}
+          AND point_stat = '소멸'
+          AND proc_dt BETWEEN date_sub(now(), interval #{period} month) AND now()
+    </select>
+
+    <select id="selectEarningByCustomerAndPeriod" resultType="PointLogUsageDto">
+        SELECT order_id, point_amt, proc_dt, point_spec, point_stat
+        FROM point_log
+        WHERE cust_id = #{custId}
+          AND point_stat LIKE '%적립%'
+          AND proc_dt BETWEEN date_sub(now(), interval #{period} month) AND now()
+    </select>-->
+
+<!--    &lt;!&ndash; CREATE &ndash;&gt;-->
+<!--    <insert id="insert" useGeneratedKeys="true" keyProperty="bno">-->
+<!--        INSERT INTO board-->
+<!--            (title, content, writer)-->
+<!--        VALUES-->
+<!--            (#{title}, #{content}, #{writer})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash; READ &ndash;&gt;-->
+<!--    <sql id="select">-->
+<!--        SELECT * FROM board-->
+<!--    </sql>-->
+
+<!--    <sql id="count">-->
+<!--        SELECT COUNT(*) FROM board-->
+<!--    </sql>-->
+
+<!--    <select id="selectAll" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        ORDERS LIMIT #{limit} OFFSET #{start}-->
+<!--    </select>-->
+
+<!--    <select id="selectByNumber" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE bno = #{bno}-->
+<!--    </select>-->
+
+<!--    <select id="selectByTitle" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE title LIKE CONCAT('%', #{title}, '%')-->
+<!--    </select>-->
+
+<!--    <select id="selectByWriter" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE writer = #{writer}-->
+<!--    </select>-->
+
+<!--    <select id="countAll" resultType="int">-->
+<!--        <include refid="count"/>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; UPDATE &ndash;&gt;-->
+<!--    <update id="update">-->
+<!--        UPDATE board-->
+<!--        SET title = #{title}, content=#{content}, writer=#{writer}-->
+<!--        WHERE bno = #{bno}-->
+<!--    </update>-->
+
+<!--    <update id="resetAutoIncrement">-->
+<!--        ALTER TABLE board-->
+<!--            AUTO_INCREMENT = 1-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; DELETE &ndash;&gt;-->
+<!--    <delete id="deleteAll">-->
+<!--        DELETE FROM board-->
+<!--    </delete>-->
+
+<!--    <delete id="deleteByNumber" parameterType="int">-->
+<!--        DELETE FROM board-->
+<!--        WHERE bno = #{bno}-->
+<!--    </delete>-->
+</mapper>

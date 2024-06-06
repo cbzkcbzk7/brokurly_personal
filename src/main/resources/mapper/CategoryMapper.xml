@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.categories.CategoryDao">
+
+    <!--  CREATE  -->
+
+    <insert id="insert">
+        INSERT INTO category_code
+               (code_id, exp)
+        VALUES (#{codeId},#{exp})
+    </insert>
+
+    <insert id="insertCategory">
+        INSERT INTO category_code
+               (code_id, exp)
+        VALUES (#{codeId},#{exp})
+    </insert>
+
+
+    <!--  READ  -->
+    <sql id="select">
+        SELECT * FROM category_code
+    </sql>
+
+
+    <!--  READ  -->
+
+    <!--  카테고리 대분류 가져오기  -->
+    <select id="selectPrimary" resultType="Category">
+        <![CDATA[
+        SELECT code_id, exp
+        FROM category_code
+        WHERE code_id < 1000
+        ]]>
+    </select>
+
+    <!--    카테고리 중분류 가져오기-->
+    <select id="selectMiddle" resultType="Category">
+    SELECT code_id, exp
+    FROM category_code
+    WHERE code_id LIKE '${codeId}0%'
+
+    </select>
+
+    <select id="getCategoryExpByPrimary" resultType="Category">
+        <include refid="select"/>
+        WHERE code_id LIKE CONCAT(#{cateCode}, '%');
+    </select>
+
+    <!--  UPDATE  -->
+    <update id="update">
+        UPDATE category_code
+        SET code_id = #{codeId}
+            , exp = #{exp}
+        WHERE code_id = #{codeId}
+    </update>
+
+
+    <!--  DELETE  -->
+    <delete id="delete">
+        DELETE FROM category_code
+        WHERE code_id = #{codeId}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM category_code
+    </delete>
+
+    <delete id="deletebyId">
+        delete from CATEGORY_CODE
+        where code_id=#{codeId}
+    </delete>
+
+</mapper>

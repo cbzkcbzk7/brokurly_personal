@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.jungsuk.repository.ExampleRepository">
+<!--    &lt;!&ndash; CREATE &ndash;&gt;-->
+<!--    <insert id="insert" useGeneratedKeys="true" keyProperty="bno">-->
+<!--        INSERT INTO board-->
+<!--            (title, content, writer)-->
+<!--        VALUES-->
+<!--            (#{title}, #{content}, #{writer})-->
+<!--    </insert>-->
+
+<!--    &lt;!&ndash; READ &ndash;&gt;-->
+<!--    <sql id="select">-->
+<!--        SELECT * FROM board-->
+<!--    </sql>-->
+
+<!--    <sql id="count">-->
+<!--        SELECT COUNT(*) FROM board-->
+<!--    </sql>-->
+
+<!--    <select id="selectAll" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        ORDERS LIMIT #{limit} OFFSET #{start}-->
+<!--    </select>-->
+
+<!--    <select id="selectByNumber" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE bno = #{bno}-->
+<!--    </select>-->
+
+<!--    <select id="selectByTitle" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE title LIKE CONCAT('%', #{title}, '%')-->
+<!--    </select>-->
+
+<!--    <select id="selectByWriter" resultType="Board">-->
+<!--        <include refid="select"/>-->
+<!--        WHERE writer = #{writer}-->
+<!--    </select>-->
+
+<!--    <select id="countAll" resultType="int">-->
+<!--        <include refid="count"/>-->
+<!--    </select>-->
+
+<!--    &lt;!&ndash; UPDATE &ndash;&gt;-->
+<!--    <update id="update">-->
+<!--        UPDATE board-->
+<!--        SET title = #{title}, content=#{content}, writer=#{writer}-->
+<!--        WHERE bno = #{bno}-->
+<!--    </update>-->
+
+<!--    <update id="resetAutoIncrement">-->
+<!--        ALTER TABLE board-->
+<!--        AUTO_INCREMENT = 1-->
+<!--    </update>-->
+
+<!--    &lt;!&ndash; DELETE &ndash;&gt;-->
+<!--    <delete id="deleteAll">-->
+<!--        DELETE FROM board-->
+<!--    </delete>-->
+
+<!--    <delete id="deleteByNumber" parameterType="int">-->
+<!--        DELETE FROM board-->
+<!--        WHERE bno = #{bno}-->
+<!--    </delete>-->
+</mapper>

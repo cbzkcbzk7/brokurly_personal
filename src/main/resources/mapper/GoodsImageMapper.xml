@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.goods.GoodsImageDao">
+    <!-- CREATE -->
+    <insert id="insertGoodsImage">
+        INSERT INTO item_image
+            (img, rep_img_fl, item_id)
+        VALUES
+            (#{img}, #{repImgFl}, #{itemId})
+    </insert>
+
+    <!-- READ -->
+    <sql id="select">
+        SELECT * FROM item_image
+    </sql>
+
+    <select id="selectByItemId" resultType="GoodsImage">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+        AND rep_img_fl='Y';
+    </select>
+
+    <select id="selectListByItemId" resultType="GoodsImage">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+        AND rep_img_fl='N';
+    </select>
+
+    <select id="searchListByItemId" resultType="GoodsImage">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+        AND rep_img_fl='Y';
+    </select>
+
+    <select id="getThumbnailByItemId" resultType="String">
+        SELECT img
+        from ITEM_IMAGE
+        WHERE item_id=#{itemId}
+        AND rep_img_fl='Y';
+    </select>
+
+    <!-- UPDATE -->
+
+    <!-- DELETE -->
+    <delete id="deleteByImg">
+        DELETE FROM item_image
+        WHERE img = #{img}
+    </delete>
+</mapper>

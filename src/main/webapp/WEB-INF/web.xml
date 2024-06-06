@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>/WEB-INF/root-context.xml</param-value>
+    </context-param>
+
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <servlet>
+        <servlet-name>appServlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>/WEB-INF/servlet-context.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>appServlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+
+    <mime-mapping>
+        <extension>png</extension>
+        <mime-type>image/png</mime-type>
+    </mime-mapping>
+
+    <!-- 한글 변환 필터 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+            <param-name>encoding</param-name>
+            <param-value>UTF-8</param-value>
+        </init-param>
+        <init-param>
+            <param-name>forceEncoding</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- HTTP 메소드 필터 -->
+    <filter>
+        <filter-name>httpMethodFilter</filter-name>
+        <filter-class>org.springframework.web.filter.HiddenHttpMethodFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>httpMethodFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+    <!-- include -->
+    <jsp-config>
+        <jsp-property-group>
+            <url-pattern>/WEB-INF/views/member/*</url-pattern>
+            <url-pattern>/WEB-INF/views/goods/goods.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/cart/cart.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/categories/*</url-pattern>
+            <url-pattern>/WEB-INF/views/search/*</url-pattern>
+            <url-pattern>/WEB-INF/views/order/checkout.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/mypage/address.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/mypage/order-detail.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/mypage/order-list.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/mypage/pick-list.jsp</url-pattern>
+            <url-pattern>/WEB-INF/views/order/success.jsp</url-pattern>
+            <include-prelude>/WEB-INF/views/include/header.jsp</include-prelude>
+            <include-coda>/WEB-INF/views/include/footer.jsp</include-coda>
+        </jsp-property-group>
+
+        <jsp-property-group>
+            <url-pattern>/WEB-INF/views/seller/*</url-pattern>
+            <include-prelude>/WEB-INF/views/include/sellerHeader.jsp</include-prelude>
+        </jsp-property-group>
+
+    </jsp-config>
+
+
+</web-app>

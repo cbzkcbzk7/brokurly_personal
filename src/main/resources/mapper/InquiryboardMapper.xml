@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.board.InquiryBoardDao">
+    <sql id="selectAll">
+        SELECT *
+        FROM inquiry_board
+    </sql>
+
+    <select id="selectOneCustId" resultType="Inquiry">
+        <include refid="selectAll"/>
+        WHERE cust_id = #{custId}
+        ORDER BY bno DESC;
+    </select>
+
+</mapper>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.cart.CustomerCartDao">
+
+    <!-- CREATE -->
+    <insert id="insert">   <!--3. SQL 이름이랑 넣을값 이름 맞춤? -->
+        INSERT INTO cart
+            (item_id, cust_id, item_cnt)
+        VALUES
+            (#{itemId}, #{custId}, #{itemCnt})
+    </insert>
+
+    <!-- READ -->
+    <sql id="select">
+        SELECT * FROM cart
+    </sql>
+
+    <select id="getCart" resultType="CustomerCart">
+        SELECT a.cust_id, a.item_id, a.item_cnt, a.item_ck, b.name, b.price, b.ship_type, b.pkg_type, b.item_dc_amt, b.item_qty
+        FROM cart a left outer join item b on a.item_id = b.item_id
+        WHERE cust_id = #{custId}
+        <if test="flag">
+            AND item_ck = 'Y'
+        </if>
+    </select>
+
+    <select id="selectByCustId" resultType="CustomerCart">
+        <include refid="select"/>
+        WHERE cust_id = #{custId}
+    </select>
+
+    <select id="selectByItemId" resultType="CustomerCart">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+    </select>
+
+    <select id="checkCart" resultType="CustomerCart">
+        <include refid="select"/>
+        WHERE cust_id = #{custId}
+        AND item_id = #{itemId}
+    </select>
+
+    <!-- UPDATE -->
+    <update id="update">
+        UPDATE cart
+        SET item_cnt = #{itemCnt} ,
+            item_ck = #{itemCk}
+        WHERE cust_id = #{custId}
+        AND item_id = #{itemId}
+    </update>
+
+    <update id="duplicationAdd">
+        UPDATE cart
+        SET item_cnt = item_cnt + #{itemCnt} ,
+            item_ck = #{itemCk}
+        WHERE cust_id = #{custId}
+          AND item_id = #{itemId}
+    </update>
+
+    <update id="updateAll">
+        UPDATE cart
+        SET item_ck = "N"
+        WHERE cust_id = #{custId}
+    </update>
+
+    <!-- DELETE -->
+    <!--고객 아이디랑 아이탬아이디 같을때만 삭제되게 -->
+    <delete id="deleteOneItem">
+        DELETE FROM cart
+        WHERE item_id = #{itemId}
+        AND cust_id = #{custId}
+    </delete>
+
+    <delete id="deleteAll">
+        DELETE FROM cart
+        WHERE cust_id = #{custId}
+    </delete>
+
+    <delete id="vacateCart">
+        DELETE FROM cart
+        WHERE cust_id = #{custId}
+          AND item_ck = #{itemCk}
+    </delete>
+
+
+
+</mapper>

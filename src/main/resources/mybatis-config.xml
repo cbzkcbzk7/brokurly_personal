@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd" >
+
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+    </settings>
+    <typeAliases>
+        <typeAlias type="com.brokurly.entity.member.Member" alias="Member"/>
+        <typeAlias type="com.brokurly.entity.order.Order" alias="Order"/>
+        <typeAlias type="com.brokurly.entity.order.OrderItems" alias="OrderItems"/>
+        <typeAlias type="com.brokurly.entity.payment.PaymentDetails" alias="PaymentDetails"/>
+        <typeAlias type="com.brokurly.entity.order.OrderAndPayment" alias="OrderAndPayment"/>
+        <typeAlias type="com.brokurly.entity.order.ReceiverDetails" alias="ReceiverDetails"/>
+        <typeAlias type="com.brokurly.entity.goods.GoodsImage" alias="GoodsImage"/>
+        <typeAlias type="com.brokurly.entity.mypage.Point" alias="Point"/>
+        <typeAlias type="com.brokurly.entity.mypage.PointLog" alias="PointLog"/>
+        <typeAlias type="com.brokurly.entity.mypage.PointAndPointLog" alias="PointAndPointLog"/>
+
+        <typeAlias type="com.brokurly.entity.mypage.ShippingLocation" alias="ShippingLocation"/>
+        <typeAlias type="com.brokurly.entity.mypage.ShippingLocationChangeLog" alias="ShippingLocationChangeLog"/>
+        <typeAlias type="com.brokurly.entity.mypage.ShippingLocationAndShoppingLocationChangeLog" alias="ShippingLocationAndShoppingLocationChangeLog"/>
+
+        <typeAlias type="com.brokurly.entity.categories.Category" alias="Category"/>
+        <typeAlias type="com.brokurly.entity.cart.Cart" alias="Cart"/>
+        <typeAlias type="com.brokurly.entity.goods.Goods" alias="Goods"/>
+<!--        <typeAlias type="com.brokurly.dto.board.NoticeListDto" alias="NoticeListDto"/>-->
+<!--        <typeAlias type="com.brokurly.dto.board.NoticeBoardDto" alias="NoticeBoardDto"/>-->
+<!--        <typeAlias type="com.brokurly.dto.board.FAQListDto" alias="FAQListDto"/>-->
+        <typeAlias type="com.brokurly.entity.board.Notice" alias="Notice"/>
+        <typeAlias type="com.brokurly.entity.board.FAQBoard" alias="FAQBoard"/>
+        <typeAlias type="com.brokurly.entity.board.FAQCate" alias="FAQCate"/>
+        <typeAlias type="com.brokurly.entity.board.Inquiry" alias="Inquiry"/>
+        <typeAlias type="com.brokurly.entity.cart.CustomerCart" alias="CustomerCart"/>
+        <typeAlias type="com.brokurly.entity.search.SearchKeyword" alias="SearchKeyword"/>
+        <typeAlias type="com.brokurly.entity.goods.GoodsAnnouncement" alias="GoodsAnnouncement"/>
+        <typeAlias type="com.brokurly.entity.goods.GoodsInquiryLog" alias="GoodsInquiryLog"/>
+        <typeAlias type="com.brokurly.entity.seller.Seller" alias="Seller"/>
+        <typeAlias type="com.brokurly.entity.goods.GoodsReviewBoard" alias="GoodsReivewBoard"/>
+        <typeAlias type="com.brokurly.entity.mypage.WishList" alias="WishList"/>
+        <typeAlias type="com.brokurly.entity.mypage.WishListItem" alias="WishListItem"/>
+    </typeAliases>
+</configuration>

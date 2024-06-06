@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.board.FAQBoardDao">
+    <select id="selectFAQList" resultType="FAQBoard">
+        SELECT *
+        FROM (
+                 SELECT *
+                 FROM FAQ_BOARD
+                 ORDER BY bno DESC
+             )
+        ORDERS LIMIT #{limit} OFFSET #{start}
+    </select>
+
+    <select id="selectMax" resultType="FAQBoard">
+        SELECT *
+        FROM FAQ_BOARD
+        ORDER BY bno DESC
+        LIMIT 1
+    </select>
+
+    <select id="selectSortedList" resultType="FAQBoard">
+        SELECT *
+        FROM FAQ_BOARD
+        WHERE cate_code = #{catecode}
+        ORDER BY bno DESC
+
+    </select>
+
+    <select id="selectAllFAQList" resultType="FAQBoard">
+        SELECT *
+        FROM FAQ_BOARD
+        ORDER BY bno DESC
+    </select>
+</mapper>

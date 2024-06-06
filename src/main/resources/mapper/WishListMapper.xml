@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.mypage.WishListDao">
+
+    <!-- CREATE -->
+    <insert id="insert">   <!--3. SQL 이름이랑 넣을값 이름 맞춤? -->
+        INSERT INTO wishlist
+            (item_id, cust_id)
+        VALUES
+            (#{itemId}, #{custId})
+    </insert>
+
+    <!-- READ -->
+    <sql id="select">
+        SELECT * FROM wishlist
+    </sql>
+
+<!--    <select id="getCart" resultType="Cart">-->
+<!--        SELECT a.custId, a.itemId, a.itemCnt, b.name, b.price, b.shipType, b.pkgType, b.itemDcAmt-->
+<!--        FROM cart a left outer join goods b on a.itemId = b.itemId-->
+<!--        WHERE cust_id = #{custId}-->
+<!--    </select>-->
+
+<!--    <select id="searchByCustId" resultType="WishList">-->
+<!--        SELECT a.*, b.*-->
+<!--        FROM wishlist a-->
+<!--                 JOIN item b ON a.cust_id = b.cust_id-->
+<!--        WHERE cust_id = #{custId}-->
+
+<!--    </select>-->
+
+    <select id="selectByItemId" resultType="WishList">
+        <include refid="select"/>
+        WHERE item_id = #{itemId}
+        AND cust_id = #{custId}
+    </select>
+
+    <!-- UPDATE -->
+<!--    <update id="update">-->
+<!--        UPDATE cart-->
+<!--        SET item_cnt = #{itemCnt}-->
+<!--        WHERE cust_id = #{custId}-->
+<!--        AND item_id = #{itemId}-->
+<!--    </update>-->
+
+
+    <!-- DELETE -->
+    <!--고객 아이디랑 아이탬아이디 같을때만 삭제되게 -->
+    <delete id="delete">
+        DELETE FROM wishlist
+        WHERE item_id = #{itemId}
+        AND cust_id = #{custId}
+    </delete>
+
+
+</mapper>

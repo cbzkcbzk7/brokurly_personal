@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.products.ProductsCreateDao">
+    <!-- item -->
+
+    <sql id="select">
+        SELECT *
+        FROM item
+    </sql>
+
+
+    <insert id="insert">
+        INSERT INTO item
+        (item_id, name, exp, price, dc_rt, item_dc_amt, origin, point_fl, cpn_elg_fl, ship_type,
+         seller_name, pkg_type, capa, sell_unit, adult_verif_fl, cate_code, item_qty,
+         bsns_no, item_spec)
+        VALUES (#{itemId}, #{name}, #{exp}, #{price}, #{dcRt}, #{itemDcAmt}, #{origin}, #{pointFl},
+                #{cpnElgFl}, #{shipType}, #{sellerName}, #{pkgType}, #{capa}, #{sellUnit},
+                #{adultVerifFl}, #{cateCode}, #{itemQty}, #{bsnsNo}, #{itemSpec})
+    </insert>
+
+
+    <update id="updateItem">
+        UPDATE item
+        SET name           = #{name},
+            exp            = #{exp},
+            price          = #{price},
+            dc_rt          = #{dcRt},
+            item_dc_amt    = #{itemDcAmt},
+            origin         = #{origin},
+            point_fl       = #{pointFl},
+            cpn_elg_fl     = #{cpnElgFl},
+            ship_type      = #{shipType},
+            seller_name    = #{sellerName},
+            pkg_type       = #{pkgType},
+            capa           = #{capa},
+            sell_unit      = #{sellUnit},
+            adult_verif_fl = #{adultVerifFl},
+            cate_code      = #{cateCode},
+            item_qty       =#{itemQty},
+            bsns_no        = #{bsnsNo},
+            item_spec      = #{itemSpec},
+            stdy_seller_fl = #{stdySellerFl}
+
+        WHERE item_id = #{itemId}
+    </update>
+
+
+    <select id="selectByItemId" resultType="Goods">
+        SELECT *
+        FROM item
+        WHERE item_id = #{itemId}
+    </select>
+
+    <!--BsnsNo로 상품 찾기-->
+    <select id="selectByBsnsNo" resultType="Goods">
+        <include refid="select"/>
+        WHERE bsns_no = #{bsnsNo}
+    </select>
+
+    <!-- 삭제하기-->
+    <delete id="deleteByItemId">
+        DELETE
+        FROM item
+        WHERE item_id = #{ItemId}
+    </delete>
+
+
+    <!--  itemAnnouncement  -->
+    <insert id="insertAnnouncement">
+        INSERT INTO item_announcement
+            (item_id, item_ann, item_ann_cate)
+        VALUES (#{itemId}, #{itemAnn}, #{itemAnnCate})
+    </insert>
+
+    <select id="selectAnnouncementByItemId" resultType="GoodsAnnouncement">
+        SELECT item_ann
+        FROM item_announcement
+        WHERE item_id = #{itemId}
+    </select>
+
+    <select id="findByItemId" resultType="GoodsAnnouncement">
+        SELECT *
+        FROM item_announcement
+        WHERE item_id = #{itemId}
+    </select>
+
+
+    <!--  SearchKeyword  -->
+    <insert id="insertSearchKeyword">
+        INSERT INTO search_keyword
+            (keyword, item_id_list)
+        VALUES (#{keyword}, #{itemIdList})
+    </insert>
+
+    <update id="updateSearchKeyword">
+        UPDATE search_keyword
+        SET item_id_list = #{itemIdList}
+        WHERE keyword = #{keyword}
+    </update>
+
+    <select id="selectByKeyword" resultType="SearchKeyword">
+        SELECT *
+        FROM search_keyword
+        WHERE keyword = #{keyword}
+    </select>
+
+
+<!--    <select id="findByItemId" resultType="GoodsAnnouncement">-->
+<!--        SELECT *-->
+<!--        FROM item_announcement-->
+<!--        WHERE item_id = #{itemId}-->
+<!--    </select>-->
+
+    <!--  keyword 존재하는지 확인  -->
+    <select id="selectKeywordExist" resultType="int">
+        SELECT EXISTS (SELECT keyword
+                       FROM search_keyword
+                       WHERE keyword = #{keyword})
+    </select>
+
+    <!--  SELECT itemIdList   -->
+    <select id="selectItemIdListByKeyword" resultType="string">
+        SELECT item_id_list
+        FROM search_keyword
+        WHERE keyword = #{keyword}
+    </select>
+
+    <!--  SELECT Keyword   -->
+    <select id="selectKeywordByItemId" resultType="string">
+        SELECT keyword
+        FROM search_keyword
+        WHERE item_id_list like CONCAT('%', #{itemIdList}, '%')
+    </select>
+
+
+    <!--  기존 문자열에 추가해서 UPDATE하기  -->
+    <update id="updateItemIdList">
+        UPDATE SEARCH_KEYWORD
+        SET item_id_list = CONCAT(item_id_list, ',', #{itemIdList})
+        WHERE keyword = #{keyword}
+    </update>
+
+    <!--insertGoodsImage-->
+    <insert id="insertGoodsImage">
+        INSERT INTO item_image
+            (img, rep_img_fl, item_id)
+        VALUES (#{img}, #{repImgFl}, #{itemId})
+    </insert>
+
+</mapper>

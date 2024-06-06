@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.board.NoticeBoardDao">
+
+    <select id="selectPage" resultType="Notice">
+        SELECT *
+        FROM (
+            SELECT *
+            FROM NOTICE_BOARD
+            ORDER BY bno DESC
+        )
+        ORDERS LIMIT #{limit} OFFSET #{start}
+    </select>
+
+    <select id="selectAllPages" resultType="Notice">
+        SELECT *
+        FROM NOTICE_BOARD
+        ORDER BY bno DESC, reg_dt DESC
+    </select>
+
+    <sql id="selectfFromNoticeBoard">
+        SELECT *
+        FROM notice_board
+    </sql>
+
+    <select id="selectBoardDetail" resultType="Notice">
+        SELECT *
+        FROM notice_board
+        WHERE bno = #{bno}
+    </select>
+
+    <select id="selectMax" resultType="Notice">
+        SELECT *
+        FROM NOTICE_BOARD
+        ORDER BY bno DESC
+        LIMIT 1
+    </select>
+
+    <select id="selectMin" resultType="Notice">
+        SELECT *
+        FROM NOTICE_BOARD
+        ORDER BY bno ASC
+        LIMIT 1
+    </select>
+
+</mapper>

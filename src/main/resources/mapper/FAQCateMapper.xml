@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.brokurly.repository.board.FAQCateDao">
+    <!-- CREATE -->
+    <select id="selectFAQCateList" resultType="FAQCate">
+        SELECT *
+        FROM FAQ_CATEGORY_CODE
+    </select>
+    <select id="selectCate" resultType="FAQCate">
+        SELECT *
+        FROM FAQ_CATEGORY_CODE
+        WHERE code = #{catecode}
+    </select>
+
+</mapper>

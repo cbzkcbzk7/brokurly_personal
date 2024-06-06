@@ -1,0 +1,321 @@
+*{font-family: 'Noto Sans KR', sans-serif;
+}
+.ui-view {
+    display: block;
+}
+
+/* 상품조회/수정 */
+
+.seller-sub-title {
+    padding: 15px 30px;
+    border-bottom: 1px solid #e3e7ee;
+    background-color: #fff;
+}
+/*div {*/
+/*    display: block;*/
+/*}*/
+body {
+    position: relative;
+    height: 100%;
+    min-height: 100%;
+    line-height: 20px;
+    color: #4d5159;
+    background-color: #edf0f5;
+    font-size: 13px;
+}
+.seller-sub-title:after,
+.seller-sub-title:before {
+    content: " ";
+    display: table;
+}
+.seller-sub-frame {
+    position: relative;
+    left:-40px;
+}
+ng-include,
+ui-view {
+    display: block;
+}
+.seller-sub-title {
+    border-bottom: 1px solid #e3e7ee;
+    background-color: #fff;
+}
+.pull-left {
+    float: left !important;
+}
+.pc .seller-sub-title h2.title {
+    padding-left: 56px;
+    line-height: 59px;
+    font-size: 20px;
+    text-align: left;
+}
+.seller-sub-content {
+    padding: 10px 25px 8px;
+}
+.seller-sub-title:after {
+    clear: both;
+}
+
+/* 아이콘 */
+
+.seller-status {
+    margin: 0 auto 20px;
+    padding: 25px 30px 0;
+    text-align: center;
+}
+.form-section {
+    position: relative;
+    margin-bottom: 10px;
+    padding: 0;
+    background-color: #fff;
+    border: 1px solid #dbdde2;
+}
+.seller-status-list > li .text {
+    display: table-cell;
+    padding-left: 15px;
+    width: 120px;
+    text-align: left;
+    vertical-align: middle;
+    line-height: 1.4;
+}
+a,
+a:focus,
+a:hover {
+    color: inherit;
+}
+.pull-left {
+    float: left !important;
+}
+.seller-status .seller-status-list > li {
+    padding-bottom: 25px;
+}
+.seller-status-list > li {
+    float: left;
+    border-top: none;
+}
+.show_li{
+    list-style: none;
+}
+.seller-status-list {
+    display: inline-block;
+    margin: 0 auto;
+}
+.seller-status {
+    margin: 0 auto 20px;
+    padding: 25px 30px 0;
+    text-align: center;
+}
+.seller-status-list {
+    /*display: block;*/
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+.seller-status .seller-status-list > li {
+    padding-bottom: 25px;
+}
+.seller-status-list > li .status-link-area {
+    display: table;
+}
+
+/* 상품목록 */
+.panel-seller .panel-heading {
+    border-bottom: none;
+}
+.panel-seller .panel-heading:after {
+    clear: both;
+}
+.panel-body,
+.panel-heading {
+    padding: 20px 35px;
+}
+.panel-seller {
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+.panel,
+.panel-seller {
+    border: 1px solid #dbdde2;
+    box-shadow: none;
+}
+.panel-seller .panel-heading .panel-title {
+    position: relative;
+    color: #303236;
+    line-height: 30px;
+    word-break: break-all;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 15px;
+}
+.text-primary {
+    color: #003103;
+}
+.panel-seller .panel-heading + .panel-body {
+    border-top: 1px solid #e2e6ee;
+}
+.panel-seller .panel-heading:after,
+.panel-seller .panel-heading:before {
+    content: " ";
+    display: table;
+}
+.panel-seller:after,
+.panel-seller:before {
+    content: " ";
+    display: table;
+}
+.btn-group-sm > .btn,
+.btn-sm {
+    padding: 2px 10px;
+    font-size: 12px;
+    line-height: 24px;
+    border-radius: 0;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #003103;
+    border-color: #003103;
+}
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 4px 15px;
+    font-size: 1rem;
+    line-height: 24px;
+    border-radius: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.seller-grid-area {
+    margin: 10px 0 0;
+}
+
+.icon-color-big {
+    display: block;
+    margin: 0;
+    color: #d0d5dd;
+}
+.seller-content .seller-grid-area .result-info .title {
+    font-size: 13px;
+}
+.seller-btn-area {
+    position: relative;
+    margin: 20px 0 15px;
+    text-align: center;
+}
+.seller-btn-area .btn {
+    margin-bottom: 5px;
+}
+.btn-group-lg > .btn,
+.btn-lg {
+    padding: 4px 20px;
+    font-size: 14px;
+    line-height: 30px;
+    border-radius: 0;
+}
+
+/* 상품목록 리스트 */
+.css-e23nfx {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid #333;
+    border-top: 2px solid #333;
+}
+
+.css-e23nfx2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 0.2px solid #333;
+    border-top: 1px solid #333;
+}
+*, :after, :before {
+    box-sizing: border-box;
+    margin: 0;
+}
+body, button, input, select, textarea {
+    font-size: 13px;
+    color: #333;
+}
+.css-mbsaqp {
+    -webkit-flex-basis: 50px;
+    -ms-flex-preferred-size: 50px;
+    flex-basis: 50px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+}
+.css-1ym8aqm {
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+}
+.css-16tcewl {
+    -webkit-flex-basis: 100px;
+    -ms-flex-preferred-size: 100px;
+    flex-basis: 100px;
+    text-align: center;
+    line-height: 20px;
+    font-weight: 400;
+    color: #333;
+}
+.css-1fttcpj {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+ol, ul {
+    list-style-type: none;
+}
+.show_li{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+.css-14yglsw {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid rgb(244, 244, 244);
+}
+.css-3o6rrk {
+    text-align: center;
+    padding: 20px 0px;
+    color: rgb(76, 76, 76);
+    flex-basis: 50px;
+}
+.status-link-area {
+    background-color: transparent;
+    text-decoration: none;
+    color: inherit;
+}

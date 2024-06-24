@@ -1,6 +1,13 @@
 # 👩‍💻TEAM PROJECT
 
-- BROKURLY - eCommerce 웹 애플리케이션 개발
+### BROKURLY
+- 스프링의 이해를 높이고 실무의 경험을 다각적으로 얻기위해 마켓컬리를 모티브로 eCommerce 쇼핑몰 프로젝트를 구현
+<br>
+
+# 👤개발 인원 및 기간
+- 기간 : 2023.12 ~ 2024.03
+- 인원 : 6명
+<br>
 
 # ⚙️SKILL
 - Java
@@ -10,6 +17,15 @@
 - MySQL
 - Javascript
 - JSP
+<br>
+<br>
+
+
+# 🖥️DB Modeling
+![ERD](https://github.com/cbzkcbzk7/brokurly_personal/assets/72380692/4288fd93-a260-406d-b17d-8e36e4553e91)
+<br>
+<br>
+<br>
 
 # 📒개인 구현기능
 ### 1. 회원가입
